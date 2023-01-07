@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
 
 namespace MeetUP
 {
@@ -11,7 +12,39 @@ namespace MeetUP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["email"] != null && (Session["password"] != null))
+            {
+                Response.Redirect("~/home.aspx");
+            }
+        }
 
+        protected void login_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnect conn = new SqlConnect();
+                conn.Connection();
+                conn.conn.Open();
+                MySqlCommand cmd = new MySqlCommand("Select * from users where email=@email and password=@password", conn.conn);
+                cmd.Parameters.AddWithValue("@email", txtemail.Text.ToString());
+                cmd.Parameters.AddWithValue("@password", txtpassword.Text.ToString());
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    Session["email"] = txtemail.Text.ToString();                   
+                    reader.Close();
+                    conn.conn.Close();
+                    Response.Redirect("~/home.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "B", "swal('Oops', 'Invalid Credentials!!..', 'error')", true);
+                }
+            }
+            catch (Exception)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "B", "swal('Oops', 'Something went wrong!!..', 'error')", true);
+            }
         }
     }
 }

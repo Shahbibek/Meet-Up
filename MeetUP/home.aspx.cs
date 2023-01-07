@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace MeetUP
 {
-    public partial class forgot_pass_link : System.Web.UI.Page
+    public partial class home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["email"] == null)
             {
-                Response.Redirect("~/forgot_password.aspx");
+                Response.Redirect("~/login.aspx");
             }
             else
             {
@@ -22,11 +22,11 @@ namespace MeetUP
             }
         }
 
-        protected void open_email_btn_Click(object sender, EventArgs e)
+        protected void btn_logout_Click(object sender, EventArgs e)
         {
             Session.RemoveAll();
             Session.Abandon();
-            Response.Redirect("https://mail.google.com/mail/u/0/#inbox");
+            Response.Redirect("~/login.aspx");
         }
     }
 }

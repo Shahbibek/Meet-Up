@@ -11,17 +11,26 @@ namespace MeetUP
 {
 
 
-    public partial class forgot_pass_link
+    public partial class home
     {
 
         /// <summary>
-        /// MyForm control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm MyForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// Literal1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal1;
 
         /// <summary>
         /// txtemail control.
@@ -33,12 +42,12 @@ namespace MeetUP
         protected global::System.Web.UI.WebControls.Label txtemail;
 
         /// <summary>
-        /// open_email_btn control.
+        /// btn_logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button open_email_btn;
+        protected global::System.Web.UI.WebControls.Button btn_logout;
     }
 }

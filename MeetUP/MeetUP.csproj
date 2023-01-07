@@ -180,6 +180,7 @@
   <ItemGroup>
     <Content Include="forgot_password.aspx" />
     <Content Include="forgot_pass_link.aspx" />
+    <Content Include="home.aspx" />
     <Content Include="login.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="Web.config" />
@@ -199,6 +200,13 @@
     <Compile Include="forgot_pass_link.aspx.designer.cs">
       <DependentUpon>forgot_pass_link.aspx</DependentUpon>
     </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +222,7 @@
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SqlConnect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
