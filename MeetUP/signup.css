@@ -30,15 +30,15 @@ body {
 
 }
 
-/* @media screen and (max-width: 1100px) {
-  .box_main {
+@media screen and (max-width: 1100px) {
+  /* .box_main {
     margin-right: -15%;
   }
 
   .logo {
     margin-right: -15%;
-  }
-} */
+  } */
+}
 
 
 .container {
@@ -80,7 +80,6 @@ body {
 }
 .intro{
   text-align: left;
-  padding-top: 50px;
 }
 
 .form_heading {
@@ -94,7 +93,7 @@ body {
 .form_desc {
   margin-top: 12px;
   margin-left: 28px;
-  margin-bottom: 55px;
+  margin-bottom: 30px;
   color: rgba(176, 176, 176, 1);
   font-family: Roboto;
   font-weight: Regular;
@@ -103,16 +102,16 @@ body {
 
 .input_box {
   width: 100%;
-  height: 55px;
-  margin-bottom: 20px;
+  height: 65px;
+  margin-bottom: 5px;
   text-align: center;
   background-size: cover;
   overflow: hidden;
 }
 
-.input_email, .input_password {
+.input_email, .input_password, .input_cPassword, .input_fName, .input_lName {
   width: 368px;
-  height: 50px;
+  height: 45px;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 8px;
@@ -133,12 +132,12 @@ body {
 .btn_box {
   width: 100%;
   height: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
   border: none;
   overflow: hidden;
 }
 
-.login_btn {
+.register_btn {
   width: 368px;
   height: 100%;
   color: rgba(255, 255, 255, 1);
@@ -153,15 +152,25 @@ body {
   cursor: pointer;
 }
 
-.footer_link {
-  margin-top: 35px;
+.footer {
+  margin-top: 10px;
 }
-
-.new_account {
+/* .txt_have_acc {
+  width: 368px;
+  color: #B0B0B0;
+  font-family: Itim;
+  font-size: 24px;
+  text-align: center;
+} */
+.footer p{
+  color: #B0B0B0;
+  font-family: Itim;
+  font-size: 24px;
+}
+.footer_txt_login {
   width: 368px;
   color: rgba(255, 122, 53, 1);
   font-family: Itim;
-  font-weight: Regular;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
@@ -180,6 +189,7 @@ a:visited,
 a:active,
 a:hover {
   text-decoration: none;
+  color: #FF7B36;
 }
 
 /*Image Box*/
@@ -238,27 +248,6 @@ a:hover {
   text-align: center;
 }
 
-/* Check Box design */
-.checkbox {
-  width: 18px;
-  height: 18px;
-  opacity: 1;
-  position: absolute;
-  top: 17px;
-  left: 3px;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  overflow: hidden;
-}
-
-input[type=checkbox] {
-  accent-color: rgba(255, 122, 53, 1);
-}
-
-/* Check Box design end */
-
 .heading_txt {
   width: 310px;
   height: 158px;
@@ -271,3 +260,54 @@ input[type=checkbox] {
   left: 24px;
   overflow: hidden;
 }
+.input_box span{
+  text-align: left;
+}
+.error_text{
+  margin-left: 40px;
+  margin-top: 2px;
+  color: #D8D8D8;
+  display: flex;
+  align-items: flex-start;
+}
+.valid_email, .valid_digit, .valid_same{
+  margin-left: -60px;
+}
+
+/* validation massage
+.invalid input {
+  border-color: #d93025;
+  } 
+
+  .input_email .show-hide,.input_password .show-hide,.input_cPassword .show-hide  {
+  transform: translateY(-50%);
+  color: #919191;
+  cursor: pointer;
+  }
+  
+  .field .error {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #d93025;
+  font-size: 13px;
+  display: none;
+  }
+
+  .invalid .error { 
+    display: flex;
+  }
+  
+  .error .error-icon{ 
+    margin-right: 6px; 
+    font-size: 15px;
+  }
+  
+  .create-password .error { 
+    align-items: flex-start;
+  }
+  
+  .create-password .error-icon { 
+    margin-top: 4px;
+  }
+   */

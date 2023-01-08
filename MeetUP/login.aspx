@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html5>
 
-    <head>
+    <head runat="server">
         <link href="https://fonts.googleapis.com/css?family=Fruktur&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
         <title>Login</title>
-        <link href="./css/login.css" rel="stylesheet" />
+        <link href="login.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -50,11 +50,9 @@
                                 <span><asp:RequiredFieldValidator ID="f_email" Text="* required" ForeColor="Red" ControlToValidate ="txtpassword" SetFocusOnError="True" runat="server" ErrorMessage="required email"></asp:RequiredFieldValidator></span>
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div class="uppr_footer">
                                 <input type="checkbox" class="checkbox">
-                            </div>
-                            <span class="v3_35">Keep me logged in</span>
+                            <span class="remember_txt">Keep me logged in</span>
                             <a class="forgot_pass" href="Forgot_password.aspx">Forgot Password ?</a>
                         </div>
                         <div class="btn_box">                           
