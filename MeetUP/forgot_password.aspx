@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
     <title>Forgot Password</title>
-    <link href="./css/forgot_pass1.css" rel="stylesheet" />
+    <link href="forgot_pass1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                     <asp:TextBox runat="server" ID="txtemail" class="input_email" placeholder="Enter Email"></asp:TextBox>
                     <div class="error_text">
                         <span><asp:RequiredFieldValidator ID="txt_email" Text="* required" ForeColor="Red" ControlToValidate ="txtemail" SetFocusOnError="True" runat="server" ErrorMessage="required email"></asp:RequiredFieldValidator></span>
-                        <span><asp:RegularExpressionValidator ID="txt_email1" runat="server" Text="* please provide valid email" ControlToValidate ="txtemail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator></span>
+                        <span><asp:RegularExpressionValidator ID="txt_email1" runat="server" Text="* please provide valid email" class="valid_email" ControlToValidate ="txtemail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator></span>
                     </div>
                 </div>
                 <div class="btn_box">
