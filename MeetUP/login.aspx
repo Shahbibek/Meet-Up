@@ -11,7 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
         <title>Login</title>
-        <link href="login.css" rel="stylesheet" />
+        <link href="css/login.css" rel="stylesheet" />
     </head>
 
     <body>
