@@ -178,7 +178,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\forgot_pass1.css" />
+    <Content Include="css\forgot_pass2.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\signup.css" />
     <Content Include="css\style.css" />
     <Content Include="forgot_password.aspx" />
     <Content Include="forgot_pass_link.aspx" />
