@@ -41,7 +41,7 @@ namespace MeetUP
 
                     MailMessage mm = new MailMessage("visionnewspoint@gmail.com", txtemail.Text);
                     mm.Subject = "Reset Password !!";
-                    mm.Body = string.Format("<h3>Hi {2},</h3><br/><h2>There was a request to reset your password!</h2><br/><h2>Please check the password to login:<h2><br/><h3>User Id: {0}</h3><h3><br/>Password: {1}</h3><br/><h2>If you did not this request then please ignore this email🙂.</h2>", email, password, fname);
+                    mm.Body = string.Format("<h3>Hi {2},</h3><br/><h2>There was a request to reset your password!</h2><br/><h2>Please check the password to login:<h2><br/><h3>User Id: {0}</h3><h3><br/>Password: {1}</h3><br/><h2>If you did not request this then please ignore this email🙂!!!.</h2>", email, password, fname);
                     mm.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
                     smtp.Host = "smtp.gmail.com";

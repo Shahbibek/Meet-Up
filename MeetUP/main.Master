@@ -18,6 +18,8 @@
 <body>
     <form id="form1" runat="server">
 
+            <%--Header content start--%>
+
             <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -48,12 +50,15 @@
                   class="search_icon"></button>
             </div>
             <div>
-              <button class="login_btn" id="openEmail_btn" runat="server">Login</button>
+              <%--<button class="login_btn" id="login_btn" runat="server" onclick="btn_login">Login</button>--%>
+              <asp:Button ID="login_button" class="login_btn" runat="server" Text="Login" OnClick="login_btn_Click"/>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
+            <%--Header content end--%>
 
             <%--main content start--%>
 
@@ -62,11 +67,14 @@
 
             <%--main content end--%>
 
+
+            <%--footer content start--%>
+
             <footer>
       <div class="footer-container">
         <div class="footer-row">
           <div class="footer-col">
-            <a href="#"><img src="/images/Logo.png" alt="MeetUp Logo"></a>
+            <a href="index.aspx"><img src="/images/Logo.png" alt="MeetUp Logo"></a>
             <p>A online platform where user can meet or book an appointment to whom ever they want to meet. They can
               schedule their meeting and get the confirmation on their mail.</p>
           </div>
@@ -75,18 +83,18 @@
               <h3 class="footer-h3">Email</h3>
             </div>
             <ul>
-              <li class="social-icon-1"><a href="#" class="email-link">eshikat355@rku.ac.in</a></li>
-              <li class="social-icon-1"><a href="#" class="email-link">bkumarsah627@rku.ac.in</a></li>
+              <li class="social-icon-1"><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMTFLKcDLHKGKfLBBQpmwljQrZHxrrCWXVzfrtRJFnfXKXbDFqmDcnFPQwhNczbGrNBMWJD" class="email-link">eshikat355@rku.ac.in</a></li>
+              <li class="social-icon-1"><a href="https://mail.google.com/mail/u/0/#all?compose=CllgCJlHFPFCZCdKZxgQSHwMzvgQKHQvVGknWGhdBJKrKXjfPXRWZhGCTMTJZjcJKVztGdGBFDV" class="email-link">bkumarsah627@rku.ac.in</a></li>
             </ul>
             <div class="footer-follow-us">
               <h3 class="footer-h3">Follow Us</h3>
             </div>
             <ul class="social-icons">
-              <li><a href="https://github.com/shikat-mahmud"><img src="/images/github_icon.png" alt="Github Icon"
+              <li><a href="#"><img src="/images/github_icon.png" alt="Github Icon"
                     style="height: 26px; width:26px;" class="social-icon-1"></a></li>
-              <li><a href="https://www.instagram.com/saikat_mahmud4"><img src="/images/instagram_icon.png"
+              <li><a href="#"><img src="/images/instagram_icon.png"
                     alt="Instagram Icon" style="height: 26px; width:26px;"></a></li>
-              <li><a href="https://www.facebook.com/eftakhar.mahmud.shikat"><img src="/images/facebook_icon.png"
+              <li><a href="#"><img src="/images/facebook_icon.png"
                     alt="Facebook Icon" style="height: 26px; width:26px;"></a></li>
             </ul>
           </div>
@@ -95,7 +103,7 @@
       <div class="footer-container con-2">
         <div class="footer-row row-2">
           <div class="footer-col copy-col">
-            <p class="copyright">Copyright &copy 2023 MeetUp Team</p>
+            <p class="copyright">Copyright &copy 2023 MeetUp Team (<a href="https://www.linkedin.com/in/bibek-sah-b81b351a7/">Bibek</a> & <a href="https://www.linkedin.com/in/eftakhar-mahmud-shikat-3b0920144/">Shikat</a>)</p>
           </div>
           <div class="footer-col nav-col">
             <nav class="footer-nav">
@@ -128,6 +136,7 @@
       </div>
     </footer>
 
+            <%--footer content end--%>
     </form>
 </body>
 </html>

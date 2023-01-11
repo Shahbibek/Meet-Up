@@ -78,60 +78,28 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            <div class="border-box"></div>
-            <div class="emp-box">
-              <div class="img-box">
-                <img src="/images/Amit sir.png" alt="Dr. Amit Lathigara">
-              </div>
-              <div class="name-box">
-                <span><b>Dr. Amit Lathigara</b></span>
-              </div>
-              <div class="desc-box">
-                <span>Dean / Director</span>
-                <span>School of Engineering</span>
-                <span>RK University</span>
-                <span>Rajkot, Gujarat</span>
-                <span  class="details-btn"><a href="#">See Details</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="border-box"></div>
-            <div class="emp-box">
-              <div class="img-box">
-                <img src="/images/Paresh sir.png" alt="Dr. Paresh Tanna">
-              </div>
-              <div class="name-box">
-                <span><b>Dr. Paresh Tanna</b></span>
-              </div>
-              <div class="desc-box">
-                <span>Professor / Nodal Officer</span>
-                <span>School of Engineering</span>
-                <span>RK University</span>
-                <span>Rajkot, Gujarat</span>
-                <span  class="details-btn"><a href="#">See Details</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="border-box"></div>
-            <div class="emp-box">
-              <div class="img-box">
-                <img src="/images/Bhoomi mam.png" alt="Bhoomi Dangar">
-              </div>
-              <div class="name-box">
-                <span><b>Bhoomi Dangar</b></span>
-              </div>
-              <div class="desc-box">
-                <span>Assistant Professor</span>
-                <span>School of Engineering</span>
-                <span>RK University</span>
-                <span>Rajkot, Gujarat</span>
-                <span  class="details-btn"><a href="#">See Details</a></span>
-              </div>
-            </div>
-          </div>
+            <asp:Repeater ID="col_repeater" runat="server">
+              <ItemTemplate>
+                  <div class="col-md-4">
+                    <div class="border-box"></div>
+                    <div class="emp-box">
+                      <div class="img-box">                        
+                        <img src="<%#Eval("profile_url_repeater")%>" alt="logo">
+                      </div>
+                      <div class="name-box">
+                        <span><b><%#Eval("name")%></b></span>
+                      </div>
+                      <div class="desc-box">
+                        <span><%#Eval("designation")%></span>
+                        <span><%#Eval("school")%></span>
+                        <span><%#Eval("Institute")%></span>
+                        <span><%#Eval("place")%></span>
+                        <span  class="details-btn"><a href="#">See Details</a></span>
+                      </div>
+                    </div>
+                  </div>
+              </ItemTemplate>
+          </asp:Repeater>         
         </div>
       </div>
     </section>

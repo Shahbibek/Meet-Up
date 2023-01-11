@@ -33,13 +33,13 @@ namespace MeetUP
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// openEmail_btn control.
+        /// login_button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton openEmail_btn;
+        protected global::System.Web.UI.WebControls.Button login_button;
 
         /// <summary>
         /// MainContent control.
