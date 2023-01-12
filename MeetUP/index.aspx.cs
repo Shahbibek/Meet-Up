@@ -39,6 +39,16 @@ namespace MeetUP
         //protected void btnShow_Click(object sender, EventArgs e)
         //{
         //    Response.Redirect("login.aspx");
-        //}
+        //}      
+
+        protected void btn_appoint_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("no_verification.html");
+        }
+
+        protected void booking_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("no_verification.html");
+        }
     }
 }

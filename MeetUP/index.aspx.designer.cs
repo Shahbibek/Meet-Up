@@ -15,13 +15,13 @@ namespace MeetUP
     {
 
         /// <summary>
-        /// Button1 control.
+        /// booking_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Button1;
+        protected global::System.Web.UI.WebControls.Button booking_btn;
 
         /// <summary>
         /// col_repeater control.
@@ -33,12 +33,12 @@ namespace MeetUP
         protected global::System.Web.UI.WebControls.Repeater col_repeater;
 
         /// <summary>
-        /// Button2 control.
+        /// btn_appoint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Button2;
+        protected global::System.Web.UI.WebControls.Button btn_appoint;
     }
 }

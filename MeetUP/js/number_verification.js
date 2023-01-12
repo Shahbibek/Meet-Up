@@ -22,7 +22,7 @@ function phoneAuth() {
 function codeverify() {
     var code = document.getElementById('OTPtxt').value;
     coderesult.confirm(code).then(function (result) {
-        location.href = "book_appointment.aspx"
+        location.href = "book_appointment.aspx";
         //alert("Successfully Verified");
         //var user = result.user;
         //console.log(user);       

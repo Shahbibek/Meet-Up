@@ -19,7 +19,8 @@
                   your appointment in minutes...</p>
               </div>
               <div class="booking-btn-box">
-                <button class="booking-btn" id="Button1" runat="server">Book Appointment</button>
+                <%--<button class="booking-btn" id="Button1" runat="server" onclick="booking_btn">Book Appointment</button>--%>
+                <asp:Button ID="booking_btn" class="booking-btn" runat="server" Text="Book Appointment" OnClick="booking_btn_Click"/>
               </div>
             </div>
           </div>
@@ -100,9 +101,9 @@
                         <span><%#Eval("place")%></span>
                         <span class="details-btn" id="Button12" runat="server"><a href="#">See Details</a></span>
                       </div>
-                        <%--<asp:Button class="details-btn" ID="BtnShow" runat="server" Text="See Details" />--%>
                     </div>
                   </div>                                              
+                        <%--<asp:Button class="details-btn" ID="BtnShow" runat="server" Text="See Details" />--%>
                 <!-- start popup Section -->
                       
            <%-- <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
@@ -202,7 +203,8 @@
                 <p>Get your appointment booked.</p>
               </div>
               <div class="booking-btn-box">
-                <button class="booking-btn" id="Button2" runat="server">Get Appointment</button>
+                <%--<button class="booking-btn" id="btn_appoint" runat="server" onclick="btn_appointment">Get Appointment</button>--%>
+                  <asp:Button ID="btn_appoint" class="booking-btn" runat="server" Text="Get Appointment" OnClick="btn_appoint_Click"/>
               </div>
             </div>
           </div>
