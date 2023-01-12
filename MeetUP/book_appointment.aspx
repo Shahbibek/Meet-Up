@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="book_appointment.aspx.cs" Inherits="MeetUP.book_appointment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="css/multiview.css" rel="stylesheet" />   
+    <link href="css/multiview.css" rel="stylesheet" />      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:MultiView ID="MultiView_1" runat="server" ActiveViewIndex="0">
@@ -15,6 +15,15 @@
             <div class="appointment_form">
                 <center>
                     <table>
+                        <tr>
+                            <td>
+                                <label for="e_mail">Email :</label>
+                            </td>
+                            <td>                                
+                                <asp:TextBox ID="emailtxt" runat="server" class="mbl-no"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Text="*invalid email" class="valid_email" ControlToValidate ="emailtxt" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator>
+                            </td>
+                        </tr>
                         <tr>
                             <td>
                                 <label for="date1txt">Date of Booking :</label>
@@ -119,6 +128,15 @@
                     <table>
                         <tr>
                             <td>
+                                <label for="e_txt">Email :</label>
+                            </td>
+                            <td>
+                               <%-- <input type="date" ID="datetxt" class="mbl-no" placeholder="Enter mobile no." required>--%>
+                                <asp:Label runat="server" ID="email_txt" class="mbl-no"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <label for="datetxt">Date of Booking :</label>
                             </td>
                             <td>
@@ -174,7 +192,7 @@
                 <div class="submit-btn">
                     <asp:Button ID="btn_back" class="mbl-no" runat="server" Text="Back" OnClick="btn_back_Click"/>
                     <asp:Button ID="btn_see_details" class="mbl-no" runat="server" Text="See Details" OnClick="btn_see_details_Click"/>
-                    <asp:Button ID="btn_book" class="mbl-no" runat="server" Text="Submit"/>
+                    <asp:Button ID="btn_book" class="mbl-no" runat="server" Text="Submit" OnClick="btn_book_Click"/>
                 </div>
             </div>
         </div>
