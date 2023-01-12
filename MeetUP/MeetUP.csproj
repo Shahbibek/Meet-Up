@@ -232,7 +232,6 @@
     <Content Include="css\style.css" />
     <Content Include="forgot_password.aspx" />
     <Content Include="forgot_pass_link.aspx" />
-    <Content Include="home.aspx" />
     <Content Include="index.aspx" />
     <Content Include="js\number_verification.js" />
     <Content Include="js\style.js" />
@@ -346,13 +345,6 @@
     </Compile>
     <Compile Include="forgot_pass_link.aspx.designer.cs">
       <DependentUpon>forgot_pass_link.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

@@ -13,7 +13,17 @@ namespace MeetUP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try{
+
+            if (Session["email"] == null)
+            {
+                Response.Redirect("~/login.aspx");
+            }
+            else
+            {
+
+            }
+            try
+            {
                 if (!Page.IsPostBack)
                 {
                     SqlConnect conn = new SqlConnect();
