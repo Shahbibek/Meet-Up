@@ -13,14 +13,32 @@ namespace MeetUP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnect conn = new SqlConnect();
-            conn.Connection();
-            conn.conn.Open();
-            MySqlDataAdapter sda = new MySqlDataAdapter("Select * from repeater_data", conn.conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            col_repeater.DataSource = dt;
-            col_repeater.DataBind();
+            try{
+                if (!Page.IsPostBack)
+                {
+                    SqlConnect conn = new SqlConnect();
+                    conn.Connection();
+                    conn.conn.Open();
+                    MySqlDataAdapter sda = new MySqlDataAdapter("Select * from repeater_data", conn.conn);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    col_repeater.DataSource = dt;
+                    col_repeater.DataBind();
+                }
+                else
+                {
+                    Console.Write("something went wrong");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error info:" + ex.Message);
+            }
         }
+
+        //protected void btnShow_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("login.aspx");
+        //}
     }
 }
