@@ -1,6 +1,5 @@
 ﻿@charset "UTF-8";
 
-:root,
 [data-bs-theme=light] {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -2191,12 +2190,12 @@ progress {
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
     --bs-table-accent-bg: var(--bs-table-striped-bg);
-    color: var(--bs-table-striped-color)
+    /* color: var(--bs-table-striped-color) */
 }
 
 .table-striped-columns > :not(caption) > tr > :nth-child(2n) {
     --bs-table-accent-bg: var(--bs-table-striped-bg);
-    color: var(--bs-table-striped-color)
+    /* color: var(--bs-table-striped-color) */
 }
 
 .table-active {
@@ -13615,5 +13614,3 @@ fieldset:disabled .btn {
         display: none !important
     }
 }
-
-/*# sourceMappingURL=bootstrap.min.css.map */
