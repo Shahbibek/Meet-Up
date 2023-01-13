@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MeetUP.index" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -16,7 +19,8 @@
                   your appointment in minutes...</p>
               </div>
               <div class="booking-btn-box">
-                <button class="booking-btn" id="Button1" runat="server">Book Appointment</button>
+                <%--<button class="booking-btn" id="Button1" runat="server" onclick="booking_btn">Book Appointment</button>--%>
+                <asp:Button ID="booking_btn" class="booking-btn" runat="server" Text="Book Appointment" OnClick="booking_btn_Click"/>
               </div>
             </div>
           </div>
@@ -79,6 +83,7 @@
         </div>
         <div class="row">
             <asp:Repeater ID="col_repeater" runat="server">
+            
               <ItemTemplate>
                   <div class="col-md-4">
                     <div class="border-box"></div>
@@ -94,17 +99,96 @@
                         <span><%#Eval("school")%></span>
                         <span><%#Eval("Institute")%></span>
                         <span><%#Eval("place")%></span>
-                        <span  class="details-btn"><a href="#">See Details</a></span>
+                        <span class="details-btn" id="Button12" runat="server"><a href="#">See Details</a></span>
                       </div>
                     </div>
-                  </div>
-              </ItemTemplate>
-          </asp:Repeater>         
+                  </div>                                              
+                        <%--<asp:Button class="details-btn" ID="BtnShow" runat="server" Text="See Details" />--%>
+                <!-- start popup Section -->
+                      
+           <%-- <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+            </asp:ToolkitScriptManager>
+            <asp:Panel ID="show_panel" runat="server">
+                 <div class="main">
+        <button class="close_btn" id="close_button">
+            <img src="/images/close.png" alt="">
+        </button>
+        <div class="emp-name">
+        <span>Dr. Amit Lathigara</span>
+    </div>
+    <div class="emp-designation">
+        <span>Dean / Director</span>
+    </div>
+        <div class="container">
+            <table class="details-tbl">
+                <caption class="tbl-head">Details</caption>
+                <tr>
+                    <td class="td-1">
+                        Department
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-1">
+                        Teaching Experience
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-1">
+                        Industrial Experience
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-1">
+                        Total Experience
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-1">
+                        Qualification
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-1">
+                        Specialization
+                    </td>
+                    <td>
+                        something
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+            </asp:Panel>
+            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" CancelControlID="close_button" PopupControlID="show_panel" TargetControlID="BtnShow">
+            </asp:ModalPopupExtender>        --%>
+
+   
+                <!-- end popup Section -->
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
       </div>
     </section>
 
     <!-- end emp section -->
+
+   
+              
 
     <!-- start section 4 -->
 
@@ -119,7 +203,8 @@
                 <p>Get your appointment booked.</p>
               </div>
               <div class="booking-btn-box">
-                <button class="booking-btn" id="Button2" runat="server">Get Appointment</button>
+                <%--<button class="booking-btn" id="btn_appoint" runat="server" onclick="btn_appointment">Get Appointment</button>--%>
+                  <asp:Button ID="btn_appoint" class="booking-btn" runat="server" Text="Get Appointment" OnClick="btn_appoint_Click"/>
               </div>
             </div>
           </div>

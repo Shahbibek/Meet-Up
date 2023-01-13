@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Istok Web" rel="stylesheet" />
     <link href="./css/main.css" rel="stylesheet" />
-    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />    
     <script src="./js/style.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -23,7 +23,7 @@
             <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="./images/Logo.png" alt="MeetUp Logo"></a>
+          <a class="navbar-brand" href="index.aspx"><img src="./images/Logo.png" alt="MeetUp Logo"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                 <a class="nav-link" href="#">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Book Appointment</a>
+                <a class="nav-link" href="no_verification.html">Book Appointment</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
@@ -51,7 +51,7 @@
             </div>
             <div>
               <%--<button class="login_btn" id="login_btn" runat="server" onclick="btn_login">Login</button>--%>
-              <asp:Button ID="login_button" class="login_btn" runat="server" Text="Login" OnClick="login_btn_Click"/>
+              <asp:Button ID="login_button" class="login_btn" runat="server" Text="Logout" OnClick="login_btn_Click"/>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@
                   <img src="/images/line_icon.png" style="height: 20px;">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Book Appointment</a>
+                  <a class="nav-link" href="no_verification.html">Book Appointment</a>
                 </li>
                 <li>
                   <img src="/images/line_icon.png" style="height: 20px;">

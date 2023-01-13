@@ -34,7 +34,7 @@ namespace MeetUP
                     Session["email"] = txtemail.Text.ToString();                   
                     reader.Close();
                     conn.conn.Close();
-                    Response.Redirect("~/home.aspx");
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {

@@ -16,7 +16,10 @@ namespace MeetUP
 
         protected void login_btn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("login.aspx");
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("~/login.aspx");
         }
+        
     }
 }
