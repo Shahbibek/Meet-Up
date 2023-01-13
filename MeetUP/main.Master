@@ -32,10 +32,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="index.aspx">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="profile.aspx">Profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="no_verification.html">Book Appointment</a>
@@ -109,13 +109,13 @@
             <nav class="footer-nav">
               <ul class="">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="index.aspx">Home</a>
                 </li>
                 <li>
                   <img src="/images/line_icon.png" style="height: 20px;">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Profile</a>
+                  <a class="nav-link" href="profile.aspx">Profile</a>
                 </li>
                 <li>
                   <img src="/images/line_icon.png" style="height: 20px;">

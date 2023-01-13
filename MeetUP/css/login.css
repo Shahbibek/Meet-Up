@@ -109,6 +109,11 @@ body {
     overflow: hidden;
 }
 
+::placeholder {
+    color: rgba(176, 176, 176, 1);
+}
+
+
 .input_email, .input_password {
     width: 368px;
     height: 50px;

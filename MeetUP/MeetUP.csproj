@@ -223,11 +223,13 @@
     <Content Include="Content\bootstrap-datepicker3.min.css" />
     <Content Include="Content\bootstrap-datepicker3.standalone.css" />
     <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="css\details_popup.css" />
     <Content Include="css\forgot_pass1.css" />
     <Content Include="css\forgot_pass2.css" />
     <Content Include="css\login.css" />
     <Content Include="css\main.css" />
     <Content Include="css\multiview.css" />
+    <Content Include="css\profile.css" />
     <Content Include="css\signup.css" />
     <Content Include="css\style.css" />
     <Content Include="forgot_password.aspx" />
@@ -237,6 +239,8 @@
     <Content Include="js\style.js" />
     <Content Include="login.aspx" />
     <Content Include="no_verification.html" />
+    <Content Include="profile.aspx" />
+    <Content Include="run.aspx" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker-en-CA.min.js" />
@@ -322,6 +326,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="signup.aspx" />
+    <Content Include="try.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -367,7 +372,21 @@
     <Compile Include="main.Master.designer.cs">
       <DependentUpon>main.Master</DependentUpon>
     </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="run.aspx.cs">
+      <DependentUpon>run.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="run.aspx.designer.cs">
+      <DependentUpon>run.aspx</DependentUpon>
+    </Compile>
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -376,6 +395,13 @@
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlConnect.cs" />
+    <Compile Include="try.aspx.cs">
+      <DependentUpon>try.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="try.aspx.designer.cs">
+      <DependentUpon>try.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="main.Master" />
