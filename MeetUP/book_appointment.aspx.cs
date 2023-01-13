@@ -8,6 +8,12 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using AjaxControlToolkit;
 using System.Data.SqlClient;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using AjaxControlToolkit.HTMLEditor.ToolbarButton;
+using System.Web.Helpers;
+using System.Xml.Linq;
 
 namespace MeetUP
 {
@@ -76,12 +82,31 @@ namespace MeetUP
                 cmd.Parameters.AddWithValue("@r_booking", resntxt.Text);
                 cmd.Parameters.AddWithValue("@p_emergency", desctxt.Text);
                 int v = cmd.ExecuteNonQuery();
+                
+                //***************************Email Sending  Start*****************************
+
+                MailMessage mm = new MailMessage("visionnewspoint@gmail.com", emailtxt.Text);
+                mm.Subject = "Appointment Created Successfully !!";
+                mm.Body = string.Format("<h3>Hi,</h3><br/><h2>You have successfully created your appointment !!!..</h2><br/><p>Please check the status:<p><br/><p>In the profile section under your <b>Profile / Appointment Details...</b></p><br/><br/><p>Greeting from MeetUp family !!!!..🙂.</p>");
+                mm.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential nc = new NetworkCredential();
+                nc.UserName = "visionnewspoint@gmail.com";
+                nc.Password = "gbgntuecqthtuuhc";
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = nc;
+                smtp.Port = 587;
+                smtp.Send(mm);
                 conn.conn.Close();
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully!!!.')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
+
+                //***************************Email Sending  Start*****************************
             }
             catch (Exception)
             {                
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong!!!.')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong !!!.')</script>");
             }
             
         }
