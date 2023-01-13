@@ -156,6 +156,62 @@
     color: #2D2D2D;
 }
 
+.appoint_tbl {
+    font-family: "Istok Web";
+}
+
+    .appoint_tbl td {
+        border: none;
+    }
+
+.tbl-col-1 {
+    color: #fff;
+}
+
+.tbl-thead {
+    color: #2D2D2D;
+    border: none;
+}
+
+.accepted-col {
+    color: #026F00;
+}
+
+.rejected-col {
+    color: #D40000;
+}
+
+.pending-col {
+    color: #505050;
+}
+
+.cancle-bt {
+    border: none;
+    color: #fff;
+    background-color: #B46C00;
+    border-radius: 5px;
+}
+
+.print-btn {
+    border: none;
+    background-color: #1C4F49;
+    border-radius: 5px;
+}
+
+    .print-btn img {
+        height: 18px;
+        width: 18px;
+    }
+
+.tbl-head {
+    background-color: #1C5C55;
+    font-family: "Itim";
+    font-size: 24px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    color: #fff;
+    text-align: center;
+}
 
 
 /*=========== Responsive section ============*/
