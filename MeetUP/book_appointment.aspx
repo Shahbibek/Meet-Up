@@ -20,7 +20,11 @@
                                 <label for="e_mail">Email :</label>
                             </td>
                             <td>                                
+<<<<<<< HEAD
                                 <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="Enter Email"></asp:TextBox>
+=======
+                                <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="example@gmail.com"></asp:TextBox>
+>>>>>>> 1fc73783e663cbe9d3fa5ef4e561f6d13ff8cc35
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Text="*invalid email" class="valid_email" ControlToValidate ="emailtxt" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
