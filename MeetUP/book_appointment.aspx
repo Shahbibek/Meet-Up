@@ -21,7 +21,7 @@
                             </td>
                             <td>                                
                                 <%--<asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="Enter Email"></asp:TextBox>--%>
-                                <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="example@gmail.com"></asp:TextBox>
+                                <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" AutoPostBack="true" placeholder="example@gmail.com"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Text="*invalid email" class="valid_email" ControlToValidate ="emailtxt" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
@@ -30,7 +30,7 @@
                                 <label for="date1txt">Date of Booking :</label>
                             </td>
                             <td>                                
-                                <asp:TextBox ID="datetxt" runat="server" Textmode="Date" class="mbl-no"></asp:TextBox>
+                                <asp:TextBox ID="datetxt" runat="server" Textmode="Date" AutoPostBack="true" class="mbl-no"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Text="* required" ForeColor="Red" ControlToValidate ="datetxt" SetFocusOnError="True" runat="server" ErrorMessage="required date"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
@@ -80,7 +80,7 @@
                             </td>
                             <td>                               
                                 <%--<input id="mobtxt" type="submit" class="mbl-no" placeholder="+91xxxxxxxxxx"/>--%>
-                                <asp:TextBox ID="mobtxt" runat="server" class="mbl-no" placeholder="+91xxxxxxxxxx"></asp:TextBox>
+                                <asp:TextBox ID="mobtxt" runat="server" class="mbl-no" AutoPostBack="true" placeholder="+91xxxxxxxxxx"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Text="* required" ForeColor="Red" ControlToValidate ="mobtxt" SetFocusOnError="True" runat="server" ErrorMessage="required mobile number"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
@@ -90,7 +90,7 @@
                             </td>
                             <td>
                                 <%--<input type="text" ID="resntxt" class="mbl-no" placeholder="Admission Purpose" required>--%>
-                                <asp:TextBox ID="resntxt" runat="server" class="mbl-no" placeholder="Reason .."></asp:TextBox>
+                                <asp:TextBox ID="resntxt" runat="server" class="mbl-no" AutoPostBack="true" placeholder="Reason .."></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" Text="* required" ForeColor="Red" ControlToValidate ="resntxt" SetFocusOnError="True" runat="server" ErrorMessage="required booking reason"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
@@ -100,7 +100,7 @@
                             </td>
                             <td>
                                 <%--<input type="text" ID="desctxt" class="mbl-no" placeholder="Need Help..." required>--%>
-                                 <asp:TextBox ID="desctxt" runat="server" class="mbl-no" placeholder="Optional.."></asp:TextBox>                               
+                                 <asp:TextBox ID="desctxt" runat="server" class="mbl-no" AutoPostBack="true" placeholder="Optional.."></asp:TextBox>                               
                             </td>
                         </tr>
                         <tr>

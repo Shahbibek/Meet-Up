@@ -14,6 +14,7 @@ using System.Net.Mail;
 using AjaxControlToolkit.HTMLEditor.ToolbarButton;
 using System.Web.Helpers;
 using System.Xml.Linq;
+using Firebase.Auth;
 
 namespace MeetUP
 {
@@ -66,50 +67,64 @@ namespace MeetUP
         }
 
         protected void btn_book_Click(object sender, EventArgs e)
-        {   
-            try
+        {
+            SqlConnect conn = new SqlConnect();
+            conn.Connection();
+            conn.conn.Open();
+            MySqlCommand query = new MySqlCommand("Select user_id from users where email='Session[email]'", conn.conn);
+            MySqlDataReader reader = query.ExecuteReader();
+            if (reader.Read())
             {
-                SqlConnect conn = new SqlConnect();
-                conn.Connection();
-                conn.conn.Open();
-                string cmdText = "INSERT INTO book_appointment(email, booking_date, meeting_with, current_designation, mobile_no, r_booking, p_emergency) VALUES (@email, @booking_date, @meeting_with, @current_designation, @mobile_no, @r_booking, @p_emergency)";
-                MySqlCommand cmd = new MySqlCommand(cmdText, conn.conn);
-                cmd.Parameters.AddWithValue("@email", emailtxt.Text);
-                cmd.Parameters.AddWithValue("@booking_date", datetxt.Text);
-                cmd.Parameters.AddWithValue("@meeting_with", emptxt.SelectedItem.Text);
-                cmd.Parameters.AddWithValue("@current_designation", desigtxt.SelectedItem.Text);
-                cmd.Parameters.AddWithValue("@mobile_no", mobtxt.Text);
-                cmd.Parameters.AddWithValue("@r_booking", resntxt.Text);
-                cmd.Parameters.AddWithValue("@p_emergency", desctxt.Text);
-                int v = cmd.ExecuteNonQuery();
+                int user_id = Convert.ToInt32(reader["user_id"]);
+                reader.Close();
                 
-                //***************************Email Sending  Start*****************************
+                try
+                {
+                    string cmdText = "INSERT INTO book_appointment(email, booking_date, meeting_with, current_designation, mobile_no, r_booking, p_emergency) VALUES (@email, @booking_date, @meeting_with, @current_designation, @mobile_no, @r_booking, @p_emergency) where user_id='user_id'";
+                    MySqlCommand cmd = new MySqlCommand(cmdText, conn.conn);
+                    cmd.Parameters.AddWithValue("@email", emailtxt.Text);
+                    cmd.Parameters.AddWithValue("@booking_date", datetxt.Text);
+                    cmd.Parameters.AddWithValue("@meeting_with", emptxt.SelectedItem.Text);
+                    cmd.Parameters.AddWithValue("@current_designation", desigtxt.SelectedItem.Text);
+                    cmd.Parameters.AddWithValue("@mobile_no", mobtxt.Text);
+                    cmd.Parameters.AddWithValue("@r_booking", resntxt.Text);
+                    cmd.Parameters.AddWithValue("@p_emergency", desctxt.Text);
+                    int v = cmd.ExecuteNonQuery();
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
 
-                MailMessage mm = new MailMessage("visionnewspoint@gmail.com", emailtxt.Text);
-                mm.Subject = "Appointment Created Successfully !!";
-                mm.Body = string.Format("<h3>Hi,</h3><br/><h2>You have successfully created your appointment !!!..</h2><br/><p>Please check the status:<p><br/><p>In the profile section under your <b>Profile / Appointment Details...</b></p><br/><br/><p>Greeting from MeetUp family !!!!..🙂.</p>");
-                mm.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.EnableSsl = true;
-                NetworkCredential nc = new NetworkCredential();
-                nc.UserName = "visionnewspoint@gmail.com";
-                nc.Password = "gbgntuecqthtuuhc";
-                smtp.UseDefaultCredentials = true;
-                smtp.Credentials = nc;
-                smtp.Port = 587;
-                smtp.Send(mm);
-                conn.conn.Close();
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
+                    //***************************Email Sending  Start*****************************
 
-                //***************************Email Sending  Start*****************************
+                    //MailMessage mm = new MailMessage("visionnewspoint@gmail.com", emailtxt.Text);
+                    //mm.Subject = "Appointment Created Successfully !!";
+                    //mm.Body = string.Format("<h3>Hi,</h3><br/><h2>You have successfully created your appointment !!!..</h2><br/><p>Please check the status:<p><br/><p>In the profile section under your <b>Profile / Appointment Details...</b></p><br/><br/><p>Greeting from MeetUp family !!!!..🙂.</p>");
+                    //mm.IsBodyHtml = true;
+                    //SmtpClient smtp = new SmtpClient();
+                    //smtp.Host = "smtp.gmail.com";
+                    //smtp.EnableSsl = true;
+                    //NetworkCredential nc = new NetworkCredential();
+                    //nc.UserName = "visionnewspoint@gmail.com";
+                    //nc.Password = "gbgntuecqthtuuhc";
+                    //smtp.UseDefaultCredentials = true;
+                    //smtp.Credentials = nc;
+                    //smtp.Port = 587;
+                    //smtp.Send(mm);
+                    //conn.conn.Close();
+                    //Response.Redirect("index.aspx");
+
+                    //***************************Email Sending  Start*****************************
+                }
+                catch (Exception)
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong !!!.')</script>");
+                }
+
             }
-            catch (Exception)
-            {                
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong !!!.')</script>");
+            else
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('please enter the valid email !!!.')</script>");
             }
-            
         }
 
+       
     }
 }

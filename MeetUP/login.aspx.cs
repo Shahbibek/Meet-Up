@@ -12,7 +12,7 @@ namespace MeetUP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["email"] != null && (Session["password"] != null))
+            if (Session["email"] != null && (Session["user_id"] != null))
             {
                 Response.Redirect("~/home.aspx");
             }
