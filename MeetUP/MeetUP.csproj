@@ -214,6 +214,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appointment_details.aspx" />
     <Content Include="book_appointment.aspx" />
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker.min.css" />
@@ -327,6 +328,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="appointment_details.aspx.cs">
+      <DependentUpon>appointment_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="appointment_details.aspx.designer.cs">
+      <DependentUpon>appointment_details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="book_appointment.aspx.cs">
       <DependentUpon>book_appointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
