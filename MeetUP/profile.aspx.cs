@@ -24,11 +24,17 @@ namespace MeetUP
                     SqlConnect conn = new SqlConnect();
                     conn.Connection();
                     conn.conn.Open();
-                    MySqlDataAdapter sda = new MySqlDataAdapter("Select * from users", conn.conn);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    col_repeater.DataSource = dt;
-                    col_repeater.DataBind();
+                    MySqlCommand cmd = new MySqlCommand("Select display_name, email, phone_no from users where user_id=@userId", conn.conn);
+                    cmd.Parameters.AddWithValue("@userId",Session["userId"].ToString());
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {                       
+                        d_name.Text = reader["display_name"].ToString();
+                        email_id.Text = reader["email"].ToString();
+                        mob_no.Text = reader["phone_no"].ToString();
+                        reader.Close();
+                        conn.conn.Close();
+                    }
                 }
                 else
                 {
