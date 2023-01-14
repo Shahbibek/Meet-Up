@@ -7,7 +7,9 @@
     <title></title>  
 </head>  
 <body>
+    <form id="MyForm" runat="server">
 
+    </form>
 </body>
 </html>  
 

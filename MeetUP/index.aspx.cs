@@ -14,7 +14,7 @@ namespace MeetUP
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["email"] == null && Session["user_id"] == null)
+            if (Session["email"] == null && Session["userId"] == null)
             {
                 Response.Redirect("~/login.aspx");
             }
