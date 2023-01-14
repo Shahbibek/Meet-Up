@@ -227,6 +227,7 @@
     <Content Include="Content\bootstrap-datepicker3.min.css" />
     <Content Include="Content\bootstrap-datepicker3.standalone.css" />
     <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="css\about_us.css" />
     <Content Include="css\details_popup.css" />
     <Content Include="css\forgot_pass1.css" />
     <Content Include="css\forgot_pass2.css" />

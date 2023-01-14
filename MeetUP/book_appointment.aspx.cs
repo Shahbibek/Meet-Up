@@ -112,7 +112,7 @@ namespace MeetUP
                     Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
                 //Response.Redirect("index.aspx");
 
-                //***************************Email Sending  Start*****************************
+                //***************************Email Sending  End*****************************
                 }
                 catch (Exception)
                 {
