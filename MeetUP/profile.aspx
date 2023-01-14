@@ -81,12 +81,11 @@
                                         <select ID="desigtxt" class="mbl-no" placeholder="Enter mobile no." required>
                                             <option value="">Student</option>
                                             <option value="">Gurdian</option>
-                                            <option value="">Teacher</option>                                </select>
+                                            <option value="">Teacher</option>                                
+                                        </select>
                                     </td>
-                                </tr>
-                                
-                            </table><br><br>
-        
+                                </tr>                                
+                            </table><br><br>        
                         <div class="submit-btn">
                             <button class="edit-btn">Edit</button>
                             <button class="save-btn">Save</button>
@@ -97,5 +96,4 @@
           </div>
         </div>
     </section>
-
 </asp:Content>
