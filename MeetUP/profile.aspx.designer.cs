@@ -159,6 +159,33 @@ namespace MeetUP
         protected global::System.Web.UI.WebControls.View View_2;
 
         /// <summary>
+        /// txt_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_name;
+
+        /// <summary>
+        /// txt_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_email;
+
+        /// <summary>
+        /// txt_mob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_mob;
+
+        /// <summary>
         /// profile_s1 control.
         /// </summary>
         /// <remarks>

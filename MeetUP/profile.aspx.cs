@@ -32,6 +32,9 @@ namespace MeetUP
                         d_name.Text = reader["display_name"].ToString();
                         email_id.Text = reader["email"].ToString();
                         mob_no.Text = reader["phone_no"].ToString();
+                        txt_name.Text = reader["display_name"].ToString();
+                        txt_email.Text = reader["email"].ToString();
+                        txt_mob.Text = reader["phone_no"].ToString();                      
                         fnametxt.Text = reader["fname"].ToString();
                         lnametxt.Text = reader["lname"].ToString();
                         dnametxt.Text = reader["display_name"].ToString();

@@ -124,13 +124,16 @@
           <div class="pro-details">
             <a href="#"><img src="/images/Profile photo.jpg" alt="Profile photo"></a>
             <div class="dname">
-              <span>Eftakhar Mahmud</span>
+              <%--<span>Eftakhar Mahmud</span>--%>
+              <asp:Label ID="txt_name" runat="server"></asp:Label>             
             </div>
             <div class="emailtxt">
-              <span>eshikat355@rku.ac.in</span>
+             <%-- <span>eshikat355@rku.ac.in</span>--%>
+              <asp:Label ID="txt_email" runat="server"></asp:Label>              
             </div>
             <div class="mobnotxt">
-              <span>+91 83459 82386</span>
+             <%-- <span>+91 83459 82386</span>--%>
+              <asp:Label ID="txt_mob" runat="server"></asp:Label>
             </div>
             <div class="btn-sec">
                  <asp:Button ID="profile_s1" runat="server" class="btn-sec" Text="Profile Settings" OnClick="profile_s1_Click" />
