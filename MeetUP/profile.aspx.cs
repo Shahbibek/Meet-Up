@@ -19,37 +19,18 @@ namespace MeetUP
             }
             else
             {
-                if (!Page.IsPostBack)
+                try
                 {
-                    SqlConnect conn = new SqlConnect();
-                    conn.Connection();
-                    conn.conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("Select * from users where user_id=@userId", conn.conn);
-                    cmd.Parameters.AddWithValue("@userId",Session["userId"].ToString());
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {                       
-                        d_name.Text = reader["display_name"].ToString();
-                        email_id.Text = reader["email"].ToString();
-                        mob_no.Text = reader["phone_no"].ToString();
-                        txt_name.Text = reader["display_name"].ToString();
-                        txt_email.Text = reader["email"].ToString();
-                        txt_mob.Text = reader["phone_no"].ToString();                      
-                        fnametxt.Text = reader["fname"].ToString();
-                        lnametxt.Text = reader["lname"].ToString();
-                        dnametxt.Text = reader["display_name"].ToString();
-                        emailtxt.Text = reader["email"].ToString();
-                        phonetxt.Text = reader["phone_no"].ToString();
-                        desigtxt.Text = reader["c_designation"].ToString();
-                        reader.Close();
-                        conn.conn.Close();
+                    if (!Page.IsPostBack)
+                    {
+                        BindReapeter();
+                        DataFetch();
                     }
-                                        
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.Write("something went wrong");
-                }
+                    Console.WriteLine(ex.Message);
+                }                                                                         
             }
         }
 
@@ -81,21 +62,22 @@ namespace MeetUP
 
         protected void save_profile_Click(object sender, EventArgs e)
         {
+           
             try
-            {
+            {   
                 SqlConnect conn = new SqlConnect();
                 conn.Connection();
                 conn.conn.Open();
-                string cmdText = "UPDATE INTO users SET fname=@fname,lname=@lname,display_name=@display_name,phone_no=@phone_no,c_designation=@c_designation WHERE user_id=@user_ID";
-                MySqlCommand cmd = new MySqlCommand(cmdText, conn.conn);
-                cmd.Parameters.AddWithValue("@user_ID", Session["userId"].ToString());
+                MySqlCommand cmd = new MySqlCommand("Update users set fname=@fname,lname=@lname,display_name=@display_name,phone_no=@phone_no,c_designation=@c_designation WHERE user_id=@user_id", conn.conn);
+                cmd.Parameters.AddWithValue("@user_id", Session["userId"].ToString());                                
                 cmd.Parameters.AddWithValue("@fname", fnametxt.Text);
                 cmd.Parameters.AddWithValue("@lname", lnametxt.Text);
                 cmd.Parameters.AddWithValue("@display_name", dnametxt.Text);
                 cmd.Parameters.AddWithValue("@phone_no", phonetxt.Text);
                 cmd.Parameters.AddWithValue("@c_designation", desigtxt.Text);
+                int v = cmd.ExecuteNonQuery();
                 conn.conn.Close();
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Profile Updated Successfully !!!.')</script>");
+                Response.Redirect("index.aspx");
             }
             catch(Exception )
             {
@@ -114,5 +96,60 @@ namespace MeetUP
         {
             MultiView_1.ActiveViewIndex -= 1;
         }
+
+        //Repeater data view binding start
+        public void BindReapeter()
+        {
+            SqlConnect conn = new SqlConnect();
+            conn.Connection();
+            conn.conn.Open();
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select id, status from book_appointment", conn.conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            col_repeater.DataSource = dt;
+            col_repeater.DataBind();
+        }
+
+        //Repeater data view binding end
+
+        // data fetch start for profile view 
+
+        public void DataFetch()
+        {
+            SqlConnect conn = new SqlConnect();
+            conn.Connection();
+            conn.conn.Open();
+            MySqlCommand cmd = new MySqlCommand("Select * from users where user_id=@userId", conn.conn);
+            cmd.Parameters.AddWithValue("@userId", Session["userId"].ToString());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                d_name.Text = reader["display_name"].ToString();
+                email_id.Text = reader["email"].ToString();
+                mob_no.Text = reader["phone_no"].ToString();
+                txt_name.Text = reader["display_name"].ToString();
+                txt_email.Text = reader["email"].ToString();
+                txt_mob.Text = reader["phone_no"].ToString();
+                fnametxt.Text = reader["fname"].ToString();
+                lnametxt.Text = reader["lname"].ToString();
+                dnametxt.Text = reader["display_name"].ToString();
+                emailtxt.Text = reader["email"].ToString();
+                phonetxt.Text = reader["phone_no"].ToString();
+                desigtxt.Text = reader["c_designation"].ToString();
+                reader.Close();
+                conn.conn.Close();
+            }
+        }
+        // data fetch end for profile view 
+
+
+        // data bind status color change functionality 
+
+        protected void col_repeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            
+        }
+
+
     }
 }

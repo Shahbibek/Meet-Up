@@ -151,21 +151,36 @@
               </div>
               <thead class="tbl-thead">
                 <tr>
-                  <th scope="col">Appointments</th>
+                  <th scope="col">Appointment ID</th>
                   <th scope="col">Status</th>
                   <th scope="col">Cancelation</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="tbl-col-1">appoint_id_1</td>
-                  <td class="accepted-col">Accepted</td>
+                                 <%--repeater section started--%>           
+            <asp:Repeater ID="col_repeater" runat="server" OnItemDataBound="col_repeater_ItemDataBound">            
+              <ItemTemplate>
+                   <tr>
+                  <td><asp:Label ID="lbl_1" runat="server" class="rejected-col" Text='<%#Eval("id")%>'></asp:Label></td>
+                  <td><asp:Label ID="lbl_2" runat="server" class="accepted-col" Text='<%#Eval("status")%>'></asp:Label></td>
+                  <%--<td class="tbl-col-1"><%#Eval("id")%></td>--%>
+                  <%--<td class="accepted-col"><%#Eval("status")%></td>--%>
                   <td>
-                    <button class="cancle-bt">Cancle</button>
+                    <button class="cancle-bt">Cancel</button>
                     <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
                   </td>
-                </tr>
-                <tr>
+                </tr>                                                                                           
+                </ItemTemplate>                                                    
+            </asp:Repeater>    
+                            <%--repeater section end--%>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>                                                           
+              <%--  <tr>
                   <td class="tbl-col-1">appoint_id_2</td>
                   <td class="accepted-col">Accepted</td>
                   <td>
@@ -204,14 +219,8 @@
                     <button class="cancle-bt">Cancle</button>
                     <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
                   </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                </tr>--%>
+            
 
         </asp:View>
          <%--view 2nd end--%>
