@@ -6,22 +6,11 @@
      <%--<link href="css/details_popup.css" rel="stylesheet" />--%>
     <title></title>  
 </head>  
-<body>  
-    <form id="form1" runat="server">  
-        <asp:ScriptManager ID="ScriptManager1" runat="server">  
-            </asp:ScriptManager>  
-            <%--<asp:Button ID="Button1" runat="server" Text="See Details" />  --%>
-            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="Button1"  
-                CancelControlID="Button2" >  
-            </cc1:ModalPopupExtender>  
-            <asp:Panel ID="Panl1" runat="server" align="center" style = "display:none">  
-                <iframe id="popup" src="try.aspx" runat="server" height="450px" width="605px"></iframe> 
-               <br/>  
-                <%--<asp:Button ID="Button2" runat="server" Text="Close" />--%>  
-                <asp:ImageButton ID="Button2" runat="server" src="/images/close.png" class="close_btn"/>
-            </asp:Panel>  
-    </form>  
-</body>  
+<body>
+    <form id="MyForm" runat="server">
+
+    </form>
+</body>
 </html>  
 
 
@@ -116,3 +105,25 @@
                         </asp:Panel>--%>
                   
                                      <%--new pop up end--%>
+
+
+
+
+
+
+
+
+<%--all set up--%>
+
+<%--<asp:ScriptManager ID="ScriptManager1" runat="server">  
+            </asp:ScriptManager>  
+            <asp:Button ID="Button1" runat="server" Text="See Details" /> 
+            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="Button1"  
+                CancelControlID="Button2" >  
+            </cc1:ModalPopupExtender>  
+            <asp:Panel ID="Panl1" runat="server" align="center" style = "display:none">  
+                <iframe id="popup" src="try.aspx" runat="server" height="450px" width="605px"></iframe> 
+               <br/>  
+                <asp:Button ID="Button2" runat="server" Text="Close" />  
+                <asp:ImageButton ID="Button2" runat="server" src="/images/close.png" class="close_btn"/>
+            </asp:Panel>  --%>

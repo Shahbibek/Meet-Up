@@ -12,7 +12,7 @@ namespace MeetUP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["email"] != null && (Session["password"] != null))
+            if (Session["email"] != null && (Session["userId"] != null))
             {
                 Response.Redirect("~/home.aspx");
             }
@@ -32,6 +32,7 @@ namespace MeetUP
                 if (reader.Read())
                 {
                     Session["email"] = txtemail.Text.ToString();                   
+                    Session["userId"] = reader["user_id"];                   
                     reader.Close();
                     conn.conn.Close();
                     Response.Redirect("index.aspx");

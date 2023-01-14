@@ -13,7 +13,7 @@
         <div class="head-row">
           <div class="col-head-banner top-intro">
             <div class="intro-box">
-              <h1>MEET UP</h1>
+              <h1>MEET UP </h1>
               <div class="app-desc">
                 <p>A online platform where user can meet or book an appointment to whom ever they want to meet. Schedule
                   your appointment in minutes...</p>

@@ -190,8 +190,8 @@
     color: #fff;
     background-color: #B46C00;
     border-radius: 5px;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .print-btn {
@@ -202,10 +202,10 @@
     padding-right: 5px;
 }
 
-.print-btn img {
-    height: 18px;
-    width: 18px;
-}
+    .print-btn img {
+        height: 18px;
+        width: 18px;
+    }
 
 .tbl-head {
     background-color: #1C5C55;

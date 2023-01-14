@@ -14,35 +14,35 @@ namespace MeetUP
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["email"] == null)
+            if (Session["email"] == null && Session["userId"] == null)
             {
                 Response.Redirect("~/login.aspx");
             }
             else
             {
 
-            }
-            try
-            {
-                if (!Page.IsPostBack)
+                try
                 {
-                    SqlConnect conn = new SqlConnect();
-                    conn.Connection();
-                    conn.conn.Open();
-                    MySqlDataAdapter sda = new MySqlDataAdapter("Select * from repeater_data", conn.conn);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    col_repeater.DataSource = dt;
-                    col_repeater.DataBind();
+                    if (!Page.IsPostBack)
+                    {
+                        SqlConnect conn = new SqlConnect();
+                        conn.Connection();
+                        conn.conn.Open();
+                        MySqlDataAdapter sda = new MySqlDataAdapter("Select * from repeater_data", conn.conn);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        col_repeater.DataSource = dt;
+                        col_repeater.DataBind();
+                    }
+                    else
+                    {
+                        Console.Write("something went wrong");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.Write("something went wrong");
+                    Console.Write("Error info:" + ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.Write("Error info:" + ex.Message);
             }
         }
 

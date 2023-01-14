@@ -9,7 +9,7 @@
         <asp:View ID="View_1" runat="server">
              <div class="main">
         <div class="container">
-            <div class="heading">
+            <div class="heading">                
                 <span>Book Appointment</span>
             </div>
             <div class="appointment_form">
