@@ -33,7 +33,6 @@ namespace MeetUP
                 {
                     conn.conn.Close();
                     conn.conn.Open();
-
                     string cmdText = "INSERT INTO users(fname, lname, email, password) VALUES (@fname,@lname,@email,@password)";
                     MySqlCommand cmd = new MySqlCommand(cmdText, conn.conn);
                     cmd.Parameters.AddWithValue("@fname", txtfname.Text);
