@@ -148,3 +148,8 @@ E:\SEM VI-RKU\.net_advance\CIE1 Project\New\MeetUP\MeetUP\obj\Debug\MeetUP.cspro
 E:\SEM VI-RKU\.net_advance\CIE1 Project\New\MeetUP\MeetUP\obj\Debug\MeetUP.csproj.CopyComplete
 E:\SEM VI-RKU\.net_advance\CIE1 Project\New\MeetUP\MeetUP\obj\Debug\MeetUP.dll
 E:\SEM VI-RKU\.net_advance\CIE1 Project\New\MeetUP\MeetUP\obj\Debug\MeetUP.pdb
+S:\RK University\6th Semester\.NET\Meet-Up\MeetUP\obj\Debug\MeetUP.csproj.AssemblyReference.cache
+S:\RK University\6th Semester\.NET\Meet-Up\MeetUP\obj\Debug\MeetUP.GeneratedMSBuildEditorConfig.editorconfig
+S:\RK University\6th Semester\.NET\Meet-Up\MeetUP\obj\Debug\MeetUP.csproj.CoreCompileInputs.cache
+S:\RK University\6th Semester\.NET\Meet-Up\MeetUP\obj\Debug\MeetUP.dll
+S:\RK University\6th Semester\.NET\Meet-Up\MeetUP\obj\Debug\MeetUP.pdb
