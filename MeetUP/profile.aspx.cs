@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -71,7 +73,7 @@ namespace MeetUP
                 MySqlCommand cmd = new MySqlCommand("Update users set fname=@fname,lname=@lname,display_name=@display_name,phone_no=@phone_no,c_designation=@c_designation WHERE user_id=@user_id", conn.conn);
                 cmd.Parameters.AddWithValue("@user_id", Session["userId"].ToString());                                
                 cmd.Parameters.AddWithValue("@fname", fnametxt.Text);
-                cmd.Parameters.AddWithValue("@lname", lnametxt.Text);
+                cmd.Parameters.AddWithValue("@lname", lnametxt.Text);               
                 cmd.Parameters.AddWithValue("@display_name", dnametxt.Text);
                 cmd.Parameters.AddWithValue("@phone_no", phonetxt.Text);
                 cmd.Parameters.AddWithValue("@c_designation", desigtxt.Text);
@@ -100,16 +102,29 @@ namespace MeetUP
         //Repeater data view binding start
         public void BindReapeter()
         {
+            //SqlConnect conn = new SqlConnect();
+            //conn.Connection();
+            //conn.conn.Open();
+            //MySqlDataAdapter sda = new MySqlDataAdapter("Select id, status from book_appointment WHERE is_delete=@is_delete AND user_id=@User_id", conn.conn);
+            //sda.SelectCommand.Parameters.AddWithValue("@User_id", Session["userId"].ToString());
+            //sda.SelectCommand.Parameters.AddWithValue("@is_delete", 0);
+            //DataTable dt = new DataTable();
+            //sda.Fill(dt);
+            //col_repeater.DataSource = dt;
+            //col_repeater.DataBind();
+
             SqlConnect conn = new SqlConnect();
             conn.Connection();
-            conn.conn.Open();
-            MySqlDataAdapter sda = new MySqlDataAdapter("Select id, status from book_appointment WHERE is_delete=@is_delete AND user_id=@User_id", conn.conn);
-            sda.SelectCommand.Parameters.AddWithValue("@User_id", Session["userId"].ToString());
-            sda.SelectCommand.Parameters.AddWithValue("@is_delete", 0);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            col_repeater.DataSource = dt;
+            string query = "Select id, status from book_appointment WHERE is_delete=@is_delete AND user_id=@User_id";
+            MySqlCommand cmd = new MySqlCommand(query, conn.conn);
+            cmd.Parameters.AddWithValue("@User_id", Session["userId"].ToString());
+            cmd.Parameters.AddWithValue("@is_delete", 0);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            mySqlDataAdapter.Fill(dataTable);
+            col_repeater.DataSource = dataTable;
             col_repeater.DataBind();
+
         }
 
         //Repeater data view binding end
@@ -145,13 +160,57 @@ namespace MeetUP
         // data fetch end for profile view 
 
 
-        // data bind status color change functionality 
+        // data bind status color change functionality start
 
         protected void col_repeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             
         }
 
+        // data bind status color change functionality end
+
+
+
+        // cancel button functionality of repeater start
+
+        //protected void btn_cancel_Click(object sender, EventArgs e)
+        //{
+        //    SqlConnect conn = new SqlConnect();
+        //    conn.Connection();
+        //    conn.conn.Open();
+        //    MySqlCommand cmd = new MySqlCommand("Update book_appointment set is_delete=@is_delete WHERE id=@bookingId", conn.conn);
+        //    //cmd.Parameters.AddWithValue("@bookingId", lbl_1.Text);
+        //    cmd.Parameters.AddWithValue("@is_delete", 1);
+        //    int v = cmd.ExecuteNonQuery();
+        //    conn.conn.Close();
+        //    Response.Redirect("index.aspx");
+        //}
+
+                    // cancel button functionality of repeater start
+        protected void col_repeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName == "delete")
+                {
+                    SqlConnect conn = new SqlConnect();
+                    conn.Connection();
+                    conn.conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("Update book_appointment set is_delete=@is_delete WHERE id=@bookingId", conn.conn);
+                    cmd.Parameters.AddWithValue("@bookingId", e.CommandArgument);
+                    cmd.Parameters.AddWithValue("@is_delete", 1);
+                    int v = cmd.ExecuteNonQuery();
+                    conn.conn.Close();
+                    Response.Redirect("index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong !!!.')</script>");
+            }
+           
+        }
+                        // cancel button functionality of repeater end
 
     }
 }

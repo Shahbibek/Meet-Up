@@ -39,7 +39,7 @@
                                 <label for="emp1txt">Meeting With :</label>
                             </td>
                             <td>
-                                <asp:DropDownList ID="emptxt" runat="server" DataTextField = "full_name" DataValueField = "id" class="mbl-no" AutoPostBack="True">
+                                <asp:DropDownList ID="emptxt" runat="server" DataTextField = "full_name" DataValueField = "user_id" class="mbl-no" AutoPostBack="True">
                                 </asp:DropDownList> 
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Text="* required" ForeColor="Red" ControlToValidate ="emptxt" SetFocusOnError="True" runat="server" InitialValue="1" ErrorMessage="required to whom you want to meet with"></asp:RequiredFieldValidator>                                  
                             </td>

@@ -35,7 +35,7 @@ namespace MeetUP
                         SqlConnect conn = new SqlConnect();
                         conn.Connection();
                         conn.conn.Open();
-                        MySqlCommand cmd = new MySqlCommand("SELECT id, position, full_name from management", conn.conn);
+                        MySqlCommand cmd = new MySqlCommand("SELECT user_id, position, full_name from management", conn.conn);
                         emptxt.DataSource = cmd.ExecuteReader();
                         emptxt.DataBind();                        
                     }
@@ -72,7 +72,8 @@ namespace MeetUP
             resn_txt.Text = resntxt.Text;
             desc_txt.Text = desctxt.Text;
         }
-
+                        //appointment booking start 
+                        
         protected void btn_book_Click(object sender, EventArgs e)
         {                          
                 try
@@ -84,7 +85,7 @@ namespace MeetUP
                     MySqlCommand cmd = new MySqlCommand(cmdText, conn.conn);
                     cmd.Parameters.AddWithValue("@email", emailtxt.Text);
                     cmd.Parameters.AddWithValue("@booking_date", datetxt.Text);
-                    cmd.Parameters.AddWithValue("@meeting_with", emptxt.SelectedItem.Text);
+                    cmd.Parameters.AddWithValue("@meeting_with", emptxt.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@current_designation", desigtxt.SelectedItem.Text);
                     cmd.Parameters.AddWithValue("@mobile_no", mobtxt.Text);
                     cmd.Parameters.AddWithValue("@r_booking", resntxt.Text);
@@ -109,8 +110,8 @@ namespace MeetUP
                     smtp.Port = 587;
                     smtp.Send(mm);
                     conn.conn.Close();
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
-                //Response.Redirect("index.aspx");
+                    //Response.Write("<script LANGUAGE='JavaScript' >alert('Appointment Created Successfully !!!.')</script>");
+                    Response.Redirect("profile.aspx");
 
                 //***************************Email Sending  End*****************************
                 }
@@ -119,10 +120,10 @@ namespace MeetUP
                     Response.Write("<script LANGUAGE='JavaScript' >alert('Something went wrong !!!.')</script>");
                 }
 
-         
-            
+                                        //appointment booking end
+
         }
 
-       
+
     }
 }

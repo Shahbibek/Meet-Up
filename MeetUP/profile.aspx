@@ -86,7 +86,7 @@
                                         <%--<input type="text" ID="phonetxt" class="mbl-no" placeholder="+91 83459 82386" required>--%>
                                         <asp:TextBox ID="phonetxt" runat="server" class="mbl-no" placeholder="+91xxxxxxxxxx"></asp:TextBox>                                       
                                     </td>
-                                </tr>
+                                </tr>                              
                                 <tr>
                                     <td class="lbl-td">
                                         <label for="desigtxt">Current designation :</label>
@@ -157,16 +157,18 @@
                 </tr>
               </thead>
               <tbody>
-                                 <%--repeater section started--%>           
-            <asp:Repeater ID="col_repeater" runat="server" OnItemDataBound="col_repeater_ItemDataBound">            
+                                 <%--repeater section started--%>                             
+            <asp:Repeater ID="col_repeater" runat="server" OnItemCommand="col_repeater_ItemCommand"  OnItemDataBound="col_repeater_ItemDataBound">           
               <ItemTemplate>
                    <tr>
-                  <td><asp:Label ID="lbl_1" runat="server" class="rejected-col" Text='<%#Eval("id")%>'></asp:Label></td>
+                  <td><asp:Label ID="lbl_1" runat="server" class="rejected-col" Text='<%#Eval("id")%>' ></asp:Label></td>
                   <td><asp:Label ID="lbl_2" runat="server" class="accepted-col" Text='<%#Eval("status")%>'></asp:Label></td>
                   <%--<td class="tbl-col-1"><%#Eval("id")%></td>--%>
                   <%--<td class="accepted-col"><%#Eval("status")%></td>--%>
                   <td>
-                    <button class="cancle-bt">Cancel</button>
+                    <%--<button class="cancle-bt">Cancel</button>--%>
+                      <asp:Button ID="btn_cancel" runat="server" class="cancle-bt" Text="Cancel" CommandArgument='<%# Eval("id") %>' CommandName="delete"/>
+                      <%--<asp:Button ID="btnDelete" runat="server" class="cancle-bt" Text="Cancel" Onclick="deleteBtn"/>--%>
                     <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
                   </td>
                 </tr>                                                                                           
