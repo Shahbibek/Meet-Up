@@ -103,7 +103,9 @@ namespace MeetUP
             SqlConnect conn = new SqlConnect();
             conn.Connection();
             conn.conn.Open();
-            MySqlDataAdapter sda = new MySqlDataAdapter("Select id, status from book_appointment", conn.conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select id, status from book_appointment WHERE is_delete=@is_delete AND user_id=@User_id", conn.conn);
+            sda.SelectCommand.Parameters.AddWithValue("@User_id", Session["userId"].ToString());
+            sda.SelectCommand.Parameters.AddWithValue("@is_delete", 0);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             col_repeater.DataSource = dt;

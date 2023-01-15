@@ -28,9 +28,9 @@
               <span>RK University</span>
             </div>
             <div>
-              <a href="#"><img class="social-icon" src="/images/github_icon_abt.png" alt="Github Icon"></a>
-              <a href="#"><img class="social-icon" src="/images/instagram_icon_abt.png" alt="Github Icon"></a>
-              <a href="#"><img class="social-icon" src="/images/facebook_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://github.com/Shikat-Mahmud"><img class="social-icon" src="/images/github_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://www.instagram.com/saikat_mahmud4/"><img class="social-icon" src="/images/instagram_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://www.facebook.com/eftakhar.mahmud.shikat"><img class="social-icon" src="/images/facebook_icon_abt.png" alt="Github Icon"></a>
             </div>
           </div>
         </div>
@@ -53,9 +53,9 @@
               <span>RK University</span>
             </div>
             <div>
-              <a href="#"><img class="social-icon" src="/images/github_icon_abt.png" alt="Github Icon"></a>
-              <a href="#"><img class="social-icon" src="/images/instagram_icon_abt.png" alt="Github Icon"></a>
-              <a href="#"><img class="social-icon" src="/images/facebook_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://github.com/Shahbibek"><img class="social-icon" src="/images/github_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://www.instagram.com/bib_ek.sah/"><img class="social-icon" src="/images/instagram_icon_abt.png" alt="Github Icon"></a>
+              <a href="https://www.facebook.com/bibek.sah.121"><img class="social-icon" src="/images/facebook_icon_abt.png" alt="Github Icon"></a>
             </div>
           </div>
         </div>
