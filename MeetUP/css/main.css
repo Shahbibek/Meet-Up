@@ -7,6 +7,7 @@
 body {
     background-color: #86BFBA;
     font-size: 14px;
+    /*font-family: "Istok Web";*/
 }
 
 a:link,
@@ -37,6 +38,10 @@ a:hover {
     border-radius: 90px;
 }
 
+.container-fluid {
+    font-family: "Istok Web";
+}
+
 .search_icon {
     height: 23px;
     width: 23px;
@@ -54,6 +59,7 @@ a:hover {
     font-family: itim;
     background: rgba(255, 122, 53, 1);
     border: none;
+    padding: 3px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border-bottom-left-radius: 6px;
