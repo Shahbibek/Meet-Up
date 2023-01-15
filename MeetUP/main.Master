@@ -41,7 +41,7 @@
                 <a class="nav-link" href="no_verification.html">Book Appointment</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="about_us.aspx">About Us</a>
               </li>
             </ul>
             <div class="d-flex" role="search" runat="server">
@@ -127,7 +127,7 @@
                   <img src="/images/line_icon.png" style="height: 20px;">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
+                  <a class="nav-link" href="about_us.aspx">About Us</a>
                 </li>
               </ul>
             </nav>

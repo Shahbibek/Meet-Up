@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="MeetUP.profile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/profile.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <section class="profile-section">
+     <asp:MultiView ID="MultiView_1" runat="server" ActiveViewIndex="0">
+         <%--view 1st start--%>
+        <asp:View ID="View_1" runat="server">
+            <section class="profile-section">
         <div class="profile-container">
             <div class="pro-heading">
                 <span>Your Profile</span>
@@ -26,8 +30,10 @@
                      <span><asp:Label ID="mob_no" runat="server" Text="+91xxxxxxxxxx"></asp:Label></span>
                 </div>
                 <div class="btn-sec">
-                    <button>Profile Settings</button>
-                    <button>Your Appointment</button>
+                    <asp:Button ID="profile_s" runat="server" class="btn-sec" Text="Profile Settings" />
+                    <asp:Button ID="appoint_s" runat="server" class="btn-sec" Text="Your Appointment" onclick="appoint_s_Click"/>
+                  <%--  <button>Profile Settings</button>
+                    <button>Your Appointment</button>--%>
                 </div>
             </div>
         </div>
@@ -42,8 +48,7 @@
                                     </td>
                                     <td>
                                         <%--<input type="text" ID="fnametxt" class="mbl-no" placeholder="Eftakhar Mahmud" required>--%>
-                                        <asp:TextBox ID="fnametxt" runat="server" class="mbl-no" placeholder="Enter fname"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Text="* required" ForeColor="Red" ControlToValidate ="fnametxt" SetFocusOnError="True" runat="server" ErrorMessage="required fname"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="fnametxt" runat="server" class="mbl-no" placeholder="Enter fname"></asp:TextBox>                                       
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,8 +57,7 @@
                                     </td>
                                     <td>
                                         <%--<input type="text" ID="lnametxt" class="mbl-no" placeholder="Shikat" required>--%>
-                                         <asp:TextBox ID="lnametxt" runat="server" class="mbl-no" placeholder="Enter lname"></asp:TextBox>
-                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Text="* required" ForeColor="Red" ControlToValidate ="lnametxt" SetFocusOnError="True" runat="server" ErrorMessage="required lname"></asp:RequiredFieldValidator>
+                                         <asp:TextBox ID="lnametxt" runat="server" class="mbl-no" placeholder="Enter lname"></asp:TextBox>                                         
                                     </td>
                                 </tr>
                                 <tr>
@@ -62,8 +66,7 @@
                                     </td>
                                     <td>
                                         <%--<input type="text" ID="dnametxt" class="mbl-no" placeholder="Eftakhar Mahmud" required>--%>
-                                        <asp:TextBox ID="dnametxt" runat="server" class="mbl-no" placeholder="Profile display name"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Text="* required" ForeColor="Red" ControlToValidate ="dnametxt" SetFocusOnError="True" runat="server" ErrorMessage="required display name"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="dnametxt" runat="server" class="mbl-no" placeholder="Profile display name"></asp:TextBox>                                       
                                     </td>
                                 </tr>
                                 <tr>
@@ -72,9 +75,7 @@
                                     </td>
                                     <td>
                                         <%--<input type="text" ID="emailtxt" class="mbl-no" placeholder="eshikat355@rku.ac.in" required>--%>
-                                         <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="example@gmail.com"></asp:TextBox>
-                                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator5" Text="* required" ForeColor="Red" ControlToValidate ="emailtxt" SetFocusOnError="True" runat="server" ErrorMessage="required email"></asp:RequiredFieldValidator>--%>
-                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" Text="*invalid email" ControlToValidate ="emailtxt" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red" ErrorMessage="Email is not valid"></asp:RegularExpressionValidator>
+                                        <asp:TextBox ID="emailtxt" runat="server" class="mbl-no" placeholder="example@gmail.com" ReadOnly="True"></asp:TextBox>                                      
                                     </td>
                                 </tr>
                                 <tr>
@@ -83,37 +84,23 @@
                                     </td>
                                     <td>
                                         <%--<input type="text" ID="phonetxt" class="mbl-no" placeholder="+91 83459 82386" required>--%>
-                                        <asp:TextBox ID="phonetxt" runat="server" class="mbl-no" placeholder="+91xxxxxxxxxx"></asp:TextBox>
-                                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator6" Text="* required" ForeColor="Red" ControlToValidate ="phonetxt" SetFocusOnError="True" runat="server" ErrorMessage="required phone no"></asp:RequiredFieldValidator>--%>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Text="*invalid mobile_no" ControlToValidate ="phonetxt" ValidationExpression="^([0]|\+91)?[789]\d{9}$" ForeColor="Red" ErrorMessage="mobile no is not valid"></asp:RegularExpressionValidator>
+                                        <asp:TextBox ID="phonetxt" runat="server" class="mbl-no" placeholder="+91xxxxxxxxxx"></asp:TextBox>                                       
                                     </td>
-                                </tr>
+                                </tr>                              
                                 <tr>
                                     <td class="lbl-td">
                                         <label for="desigtxt">Current designation :</label>
                                     </td>
                                     <td>
-                                       <%-- <select ID="desigtxt" class="mbl-no" placeholder="Enter mobile no." required>
-                                            <option value="">Student</option>
-                                            <option value="">Gurdian</option>
-                                            <option value="">Teacher</option>                                
-                                        </select>--%>
-                                        <asp:DropDownList ID="desigtxt" runat="server" class="mbl-no">
-                                            <asp:ListItem Value="select">Select</asp:ListItem>
-                                            <asp:ListItem>Student</asp:ListItem>
-                                            <asp:ListItem>Teacher</asp:ListItem>
-                                            <asp:ListItem>Staff</asp:ListItem>
-                                            <asp:ListItem>Professor</asp:ListItem>
-                                            <asp:ListItem>Guardians</asp:ListItem>
-                                            <asp:ListItem>Others</asp:ListItem>
-                                       </asp:DropDownList>
-                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" Text="* required" ForeColor="Red" ControlToValidate ="desigtxt" InitialValue="select" SetFocusOnError="True" runat="server" ErrorMessage="required designation"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="desigtxt" runat="server" class="mbl-no" placeholder="current designation"></asp:TextBox>                                      
                                     </td>
                                 </tr>                                
                             </table><br><br>        
                         <div class="submit-btn">
-                            <button class="edit-btn">Edit</button>
-                            <button class="save-btn">Save</button>
+                            <asp:Button ID="edit_profile" class="edit-btn" runat="server" Text="Edit" onclick="edit_profile_Click"/>
+                            <asp:Button ID="save_profile" class="save-btn" runat="server" Text="Save" onclick="save_profile_Click"/>
+                           <%-- <button class="edit-btn">Edit</button>
+                            <button class="save-btn">Save</button>--%>
                         </div>
                     </div>
                 </div>
@@ -121,4 +108,124 @@
           </div>
         </div>
     </section>
+        </asp:View>
+         <%--view 1st end--%>
+
+         <%--view 2nd start--%>
+        <asp:View ID="View_2" runat="server">
+
+            <section class="profile-section">
+    <div class="profile-container">
+      <div class="pro-heading">
+        <span>Your Profile</span>
+      </div>
+      <div class="profile-row">
+        <div class="profile-col-1">
+          <div class="pro-details">
+            <a href="#"><img src="/images/Profile photo.jpg" alt="Profile photo"></a>
+            <div class="dname">
+              <%--<span>Eftakhar Mahmud</span>--%>
+              <asp:Label ID="txt_name" runat="server"></asp:Label>             
+            </div>
+            <div class="emailtxt">
+             <%-- <span>eshikat355@rku.ac.in</span>--%>
+              <asp:Label ID="txt_email" runat="server"></asp:Label>              
+            </div>
+            <div class="mobnotxt">
+             <%-- <span>+91 83459 82386</span>--%>
+              <asp:Label ID="txt_mob" runat="server"></asp:Label>
+            </div>
+            <div class="btn-sec">
+                 <asp:Button ID="profile_s1" runat="server" class="btn-sec" Text="Profile Settings" OnClick="profile_s1_Click" />
+                 <asp:Button ID="appoint_1" runat="server" class="btn-sec" Text="Your Appointment" />
+             <%-- <button>Profile Settings</button>
+              <button>Your Appointment</button>--%>
+            </div>
+          </div>
+        </div>
+        <div class="profile-col-2 form-col">
+          <div class="inner-container">
+            <table class="table table-striped appoint_tbl">
+              <div class="tbl-head">
+                <h3>Appointment Details</h3>
+              </div>
+              <thead class="tbl-thead">
+                <tr>
+                  <th scope="col">Appointment ID</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Cancelation</th>
+                </tr>
+              </thead>
+              <tbody>
+                                 <%--repeater section started--%>                             
+            <asp:Repeater ID="col_repeater" runat="server" OnItemCommand="col_repeater_ItemCommand"  OnItemDataBound="col_repeater_ItemDataBound">           
+              <ItemTemplate>
+                   <tr>
+                  <td><asp:Label ID="lbl_1" runat="server" class="rejected-col" Text='<%#Eval("id")%>' ></asp:Label></td>
+                  <td><asp:Label ID="lbl_2" runat="server" class="accepted-col" Text='<%#Eval("status")%>'></asp:Label></td>
+                  <%--<td class="tbl-col-1"><%#Eval("id")%></td>--%>
+                  <%--<td class="accepted-col"><%#Eval("status")%></td>--%>
+                  <td>
+                    <%--<button class="cancle-bt">Cancel</button>--%>
+                      <asp:Button ID="btn_cancel" runat="server" class="cancle-bt" Text="Cancel" CommandArgument='<%# Eval("id") %>' CommandName="delete"/>
+                      <%--<asp:Button ID="btnDelete" runat="server" class="cancle-bt" Text="Cancel" Onclick="deleteBtn"/>--%>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>                                                                                           
+                </ItemTemplate>                                                    
+            </asp:Repeater>    
+                            <%--repeater section end--%>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>                                                           
+              <%--  <tr>
+                  <td class="tbl-col-1">appoint_id_2</td>
+                  <td class="accepted-col">Accepted</td>
+                  <td>
+                    <button class="cancle-bt">Cancle</button>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl-col-1">appoint_id_3</td>
+                  <td class="rejected-col">Rejected</td>
+                  <td>
+                    <button class="cancle-bt">Cancle</button>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl-col-1">appoint_id_4</td>
+                  <td class="pending-col">Pending</td>
+                  <td>
+                    <button class="cancle-bt">Cancle</button>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl-col-1">appoint_id_5</td>
+                  <td class="rejected-col">Rejected</td>
+                  <td>
+                    <button class="cancle-bt">Cancle</button>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl-col-1">appoint_id_6</td>
+                  <td class="pending-col">Pending</td>
+                  <td>
+                    <button class="cancle-bt">Cancle</button>
+                    <button class="print-btn"><img src="/images/print_icon.png" alt=""></button>
+                  </td>
+                </tr>--%>
+            
+
+        </asp:View>
+         <%--view 2nd end--%>
+
+     </asp:MultiView>
 </asp:Content>

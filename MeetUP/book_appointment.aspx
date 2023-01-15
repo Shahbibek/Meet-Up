@@ -39,22 +39,9 @@
                                 <label for="emp1txt">Meeting With :</label>
                             </td>
                             <td>
-                                <%--<select ID="emptxt" class="mbl-no" placeholder="Enter mobile no." required>
-                                    <option value="">Dr. Amit Lathigara</option>
-                                    <option value="">Dr. Paresh Tanna</option>
-                                    <option value="">Bhoomi Dangar</option>
-                                    <option value="">Nirav Bhatt</option>
-                                </select>--%>
-                                <asp:DropDownList ID="emptxt" runat="server" DataTextField = "full_name" DataValueField = "id" class="mbl-no" AutoPostBack="True">
+                                <asp:DropDownList ID="emptxt" runat="server" DataTextField = "full_name" DataValueField = "user_id" class="mbl-no" AutoPostBack="True">
                                 </asp:DropDownList> 
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Text="* required" ForeColor="Red" ControlToValidate ="emptxt" SetFocusOnError="True" runat="server" InitialValue="1" ErrorMessage="required to whom you want to meet with"></asp:RequiredFieldValidator>
-                                    <%--<asp:ListItem Value="select">Select</asp:ListItem>
-                                    <asp:ListItem>Student</asp:ListItem>
-                                    <asp:ListItem>Teacher</asp:ListItem>
-                                    <asp:ListItem>Staff</asp:ListItem>
-                                    <asp:ListItem>Professor</asp:ListItem>
-                                    <asp:ListItem>Dean</asp:ListItem>
-                                    <asp:ListItem>Director</asp:ListItem>--%>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" Text="* required" ForeColor="Red" ControlToValidate ="emptxt" SetFocusOnError="True" runat="server" InitialValue="1" ErrorMessage="required to whom you want to meet with"></asp:RequiredFieldValidator>                                  
                             </td>
                         </tr>
                         <tr>
